@@ -1,0 +1,11 @@
+<% include header.html %>
+
+    <%# ejs测试练习%>
+    <h1><%=h1%></h1>
+    <span><%=description%></span>
+    <span><%-description%></span>
+    <% for(i=0;i<lists.length;i++){ %>
+    <li><%=i%></li>
+    <% } %>
+
+<% include footer.html %>

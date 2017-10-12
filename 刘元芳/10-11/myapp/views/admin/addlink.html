@@ -1,0 +1,52 @@
+<% include header.html %>
+
+<div class="panel admin-panel margin-top">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加链接</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="index.php?m=admin&c=index&a=insertLink">
+      <div class="form-group">
+        <div class="label">
+          <label>姓名：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="username" value=""  placeholder="请输入姓名" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>URL：</label>
+        </div>
+        <div class="field">
+          <input type="text" class="input w50" name="url" value=""  placeholder="请输入地址" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>时间：</label>
+        </div>
+        <div class="field">
+          <script src="<?php echo JS_PATH?>admin/laydate.js"></script>
+          <input type="text" class="laydate-icon input w50" id="test1" name="time"  onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" value=""  data-validate="required:日期不能为空" style="padding:10px!important; height:auto!important;border:1px solid #ddd!important;" />
+          <script>
+              laydate.render({
+                  elem:'#test1',
+                  type:'datetime'
+              });
+          </script>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body></html>

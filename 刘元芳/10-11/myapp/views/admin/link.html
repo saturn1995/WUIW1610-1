@@ -1,0 +1,66 @@
+<% include header.html %>
+
+<form method="post" action="index.php?m=admin&c=index&a=link" id="listform">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 链接列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+      <ul class="search" style="padding-left:10px;">
+        <li> <a class="button border-main icon-plus-square-o" href="index.php?m=admin&c=index&a=addlink"> 添加链接</a> </li>
+    </div>
+    <table class="table table-hover text-center">
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>链接地址</th>
+        <th>时间</th>
+        <th width="310">操作</th>
+      </tr>
+      <volist name="list" id="vo">
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><div class="button-group"> <a class="button border-main" href=""><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(0)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><div class="button-group"> <a class="button border-main" href=""><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(0)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td><div class="button-group"> <a class="button border-main" href=""><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(0)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+        </tr>
+      <tr>
+        <td colspan="8">
+          <div class="pagelist">
+            <a href="index.php?m=admin&c=index&a=link&page=<?php echo $page-1<=0?1:$page-1?>">上一页</a>
+            <!--<span class="current">1</span>-->
+            <?php for($i=1;$i<=$pages;$i++){?>
+            <a href="index.php?m=admin&c=index&a=link&page=<?php echo $i?>"><?php echo $i?></a>
+            <?php }?>
+            <a href="index.php?m=admin&c=index&a=link&page=<?php echo $page+1>=$pages?$pages:$page+1?>">下一页</a>
+            <a href="index.php?m=admin&c=index&a=link&page=$pages>">尾页</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>
+<script type="text/javascript">
+
+//单个删除
+function del(id){
+	if(confirm("您确定要删除吗?")){
+        location.href="index.php?m=admin&c=index&a=delLinkId&lid="+id;
+	}
+}
+
+</script>
+</body></html>
